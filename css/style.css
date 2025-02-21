@@ -74,51 +74,123 @@ hr {
 	border: 0;
 }
 /* Navigation */
+/* General Navbar Styling */
 #menu {
-	padding: 20px;
-	transition: all 0.8s;
+	padding: 15px;
+	transition: all 0.5s ease-in-out;
+	background-color: rgba(255, 255, 255, 0.9); /* Light background for visibility */
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-#menu.navbar-default {
-	background-color: rgba(248, 248, 248, 0);
-	border-color: rgba(231, 231, 231, 0);
+
+/* Style the hamburger menu button */
+.navbar-toggle {
+	background-color: transparent; /* Dark background */
+	border-color: #00573d !important; /* Slightly lighter border */
 }
-#menu a.navbar-brand {
-	font-size: 24px;
+
+/* Change the three bars inside the hamburger menu */
+.navbar-toggle .icon-bar {
+	background-color: #00573d; /* White bars */
+}
+
+/* Change the hover effect */
+.navbar-toggle:hover, .navbar-toggle:focus {
+	background-color: #00573d; /* Slightly lighter dark */
+	border-color: #00573d;
+}
+
+/* Style menu items */
+.navbar-default .navbar-nav > li > a {
+	color: #222 !important; /* Dark text */
+	font-weight: bold;
+	padding: 10px 15px;
+}
+/* --? */
+
+/* Hover effect for menu items */
+/* .navbar-default .navbar-nav > li > a:hover {
+	color: #6aaf08;
+} */
+
+/* Navbar Brand (Phone Link) */
+#menu .navbar-brand {
+	font-size: 18px;
 	font-weight: 600;
-	color: #eee;
+	color: #333;
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	background: linear-gradient(45deg, rgba(192, 176, 44, 0.9), rgba(255, 220, 100, 0.8));
+	padding: 10px 15px;
+	border-radius: 20px;
+	text-decoration: none;
+	box-shadow: 0 4px 10px rgba(255, 165, 0, 0.3);
 }
+
+#menu .navbar-brand:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 15px rgba(255, 165, 0, 0.4);
+}
+
+/* Navbar Links */
 #menu.navbar-default .navbar-nav > li > a {
 	text-transform: uppercase;
-	color: #ddd;
-	font-size: 15px;
-	font-weight: 400;
+	color: #333;
+	font-size: 16px;
+	font-weight: 500;
 	letter-spacing: 1px;
-	padding: 8px 2px;
-	border-radius: 0;
-	margin: 9px 20px 0 20px;
+	padding: 10px 15px;
+	transition: all 0.3s ease;
 }
+
+/* Hover Effect */
 #menu.navbar-default .navbar-nav > li > a:hover {
 	color: #6aaf08;
+	text-decoration: underline;
 }
-.on {
-	background-color: #333 !important;
-	padding: 0 !important;
-	padding: 15px 0 !important;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	color: #6aaf08 !important;
+
+/* Active Link */
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #6aaf08;
 	background-color: transparent;
 }
-.navbar-toggle {
-	border-radius: 0;
+
+/* Navbar Toggle Button (Hamburger) */
+/* .navbar-toggle {
+	border-radius: 4px;
+	border: 1px solid #6aaf08;
 }
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-	background-color: #fff;
-	border-color: #fff;
-}
-.navbar-default .navbar-toggle:hover>.icon-bar {
+
+.navbar-default .navbar-toggle:hover, 
+.navbar-default .navbar-toggle:focus {
 	background-color: #6aaf08;
+	border-color: #6aaf08;
+} */
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #00573d;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+	#menu {
+		padding: 10px;
+	}
+
+	#menu .navbar-brand {
+		font-size: 16px;
+		padding: 8px 12px;
+	}
+
+	#menu .navbar-nav > li > a {
+		font-size: 14px;
+		padding: 10px;
+	}
+}
+/* -- */
 .section-title {
 	margin-bottom: 70px;
 }
@@ -420,6 +492,78 @@ ol.type li a:hover {
 	background: #fff;
 	border: 1px solid #fff;
 }
+/* -SERVICE AREAS- */
+#service-areas {
+	background: #444 url(../img/service-map.png) center center no-repeat fixed;
+	background-size: cover;
+}
+
+#service-areas .overlay {
+	padding: 120px 0;
+	background: rgba(106, 175, 8, 0.85);
+}
+
+#service-areas h2 {
+	color: #fff;
+}
+
+#service-areas hr {
+	background: rgba(255, 255, 255, 0.6);
+}
+
+#service-areas p {
+	color: #222;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 32px;
+}
+
+/* Style the location list */
+.location-list {
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0;
+	gap: 15px; /* Adds spacing between items */
+}
+
+/* Ensure items have a flexible width */
+.location-list .item {
+	background: rgba(255, 255, 255, 0.9);
+	border-radius: 8px;
+	padding: 20px;
+	margin: 10px;
+	flex: 1 1 calc(25% - 20px); /* Makes items take up 25% of width with spacing */
+	box-sizing: border-box;
+	text-align: center;
+}
+
+/* Make text more readable */
+.location-list .item p {
+	margin: 5px 0;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+	.location-list .item {
+		flex: 1 1 calc(50% - 20px); /* 2 items per row on tablets */
+	}
+}
+
+@media (max-width: 768px) {
+	.location-list {
+		flex-direction: column; /* Stack items vertically on smaller screens */
+		align-items: center;
+	}
+
+	.location-list .item {
+		width: 90%; /* Make items full width */
+	}
+}
+/* -- */
 /* Contact Section */
 #contact {
 	padding: 100px 0;
