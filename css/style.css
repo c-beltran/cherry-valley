@@ -529,38 +529,40 @@ ol.type li a:hover {
 }
 
 /* Ensure items have a flexible width */
+.location-list {
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0;
+	gap: 15px; /* Adds spacing between items */
+}
+
+/* Default: Two items per row (for desktop) */
 .location-list .item {
-	background: rgba(255, 255, 255, 0.9);
-	border-radius: 8px;
-	padding: 20px;
-	margin: 10px;
-	flex: 1 1 calc(25% - 20px); /* Makes items take up 25% of width with spacing */
+	flex: 1 1 calc(50% - 20px); /* 2 items per row */
 	box-sizing: border-box;
 	text-align: center;
 }
 
 /* Make text more readable */
 .location-list .item p {
+	color: #fff !important;
 	margin: 5px 0;
-	font-size: 18px;
+	padding: 10px;
+	font-size: 25px;
 	font-weight: bold;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-	.location-list .item {
-		flex: 1 1 calc(50% - 20px); /* 2 items per row on tablets */
-	}
-}
-
+/* Mobile: One item per row */
 @media (max-width: 768px) {
 	.location-list {
-		flex-direction: column; /* Stack items vertically on smaller screens */
+		flex-direction: column; /* Stack items vertically */
 		align-items: center;
 	}
 
 	.location-list .item {
-		width: 90%; /* Make items full width */
+		width: 90%; /* Full width */
 	}
 }
 /* -- */
