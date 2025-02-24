@@ -14,13 +14,13 @@ $(function () {
             var firstName = name.split(' ')[0]; // Extract first name
 
             // Replace with your actual Google Form's formResponse URL
-            var googleFormURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeRV889XHyasJ-DCk-SMXniRcOO7C2e4OIYnvkPce5I00kK2Q/formResponse";
+            var googleFormURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfgNSqJbocx2K4p_u-gTYBH-YdyyfNtlEin60jxugVYjc53VA/formResponse";
             
             // Replace `entry.XXXXXXX` with the actual Google Form field names
             var formData = {
-                "entry.2083922334": name,      // Replace with Google Form's entry ID for 'Name'
-                "entry.1241893417": email,     // Replace with Google Form's entry ID for 'Email'
-                "entry.1056316793": message    // Replace with Google Form's entry ID for 'Message'
+                "entry.2005620554": name,      // Replace with Google Form's entry ID for 'Name'
+                "entry.1045781291": email,     // Replace with Google Form's entry ID for 'Email'
+                "entry.839337160": message    // Replace with Google Form's entry ID for 'Message'
             };
 
             $.ajax({
