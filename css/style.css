@@ -685,7 +685,7 @@ color: #777;
 .iframe-container {
   position: relative;
   width: 100%;
-  padding-bottom: 256.25%; /* 16:9 aspect ratio */
+  padding-bottom: 100%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
   max-width: 100%;
