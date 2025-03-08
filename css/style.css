@@ -568,7 +568,7 @@ ol.type li a:hover {
 /* -- */
 /* Contact Section */
 #contact {
-	padding: 100px 0;
+	margin: 100px 0;
 	background: #F6F6F6;
 }
 #contact .section-title p {
