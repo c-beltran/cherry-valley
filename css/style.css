@@ -701,3 +701,14 @@ color: #777;
   height: 100%;
   border: none;
 }
+
+/* Mobile-specific padding adjustments for specific sections */
+@media (max-width: 767px) {
+  #about .container,
+  #services .container,
+  #portfolio .container,
+  #contact .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
