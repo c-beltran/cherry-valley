@@ -2,42 +2,48 @@ body, html {
 	font-family: 'Open Sans', sans-serif;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
-	color: #666;
+	color: #555; /* Slightly darker for better contrast */
 	font-weight: 400;
 	width: 100% !important;
 	height: 100% !important;
 	overflow-x: hidden; /* Prevent horizontal scroll as a fallback */
+	line-height: 1.6; /* Improved default line height */
 }
 h2 {
-	margin: 0 0 20px 0;
+	margin: 0 0 25px 0; /* Increased bottom margin */
 	font-weight: 600;
-	font-size: 36px;
-	color: #333;
+	font-size: 38px; /* Slightly larger */
+	color: #222; /* Darker heading color */
+	line-height: 1.3;
 }
 h3, h4 {
-	font-size: 20px;
-	font-weight: 400;
+	font-size: 22px; /* Slightly larger */
+	font-weight: 500; /* Slightly bolder */
 	color: #333;
+	line-height: 1.4;
 }
 h5 {
 	text-transform: uppercase;
 	font-weight: 700;
-	line-height: 20px;
+	line-height: 1.5; /* Adjusted line height */
 }
 p {
-	font-size: 15px;
+	font-size: 16px; /* Slightly larger base font size for paragraphs */
+	line-height: 1.7; /* Increased line height for paragraphs */
+	margin-bottom: 15px; /* Added default bottom margin to paragraphs */
 }
 p.intro {
 	margin: 12px 0 0;
-	line-height: 24px;
+	line-height: 1.8; /* Adjusted line height */
 }
 a {
-	color: #6aaf08;
+	color: #61B861; /* Updated Main Green */
 	font-weight: 400;
+	transition: color 0.3s ease; /* Smooth color transition for links */
 }
 a:hover, a:focus {
 	text-decoration: none;
-	color: #222;
+	color: #4a9d4a; /* Darker shade of updated green for hover */
 }
 ul, ol {
 	list-style: none;
@@ -69,152 +75,230 @@ hr {
 	width: 70px;
 	text-align: center;
 	position: relative;
-	background: #6aaf08;
+	background: #61B861; /* Updated Main Green */
 	margin: 0 auto;
 	margin-bottom: 20px;
 	border: 0;
 }
 /* Navigation */
-/* General Navbar Styling */
 #menu {
 	padding: 15px;
-	transition: all 0.5s ease-in-out;
-	background-color: rgba(255, 255, 255, 0.9); /* Light background for visibility */
-	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	transition: all 0.8s; /* Increased transition duration */
+	background-color: transparent; /* Transparent by default */
+	border-bottom: none; /* No border by default */
+	box-shadow: none; /* No shadow by default */
 }
 
-/* Style the hamburger menu button */
-.navbar-toggle {
-	background-color: transparent; /* Dark background */
-	border-color: #00573d !important; /* Slightly lighter border */
+/* Scrolled state for Navbar */
+#menu.navbar-scrolled {
+	background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque white */
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Softer border */
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Softer shadow */
 }
-
-/* Change the three bars inside the hamburger menu */
-.navbar-toggle .icon-bar {
-	background-color: #00573d; /* White bars */
-}
-
-/* Change the hover effect */
-.navbar-toggle:hover, .navbar-toggle:focus {
-	background-color: #00573d; /* Slightly lighter dark */
-	border-color: #00573d;
-}
-
-/* Style menu items */
-.navbar-default .navbar-nav > li > a {
-	color: #222 !important; /* Dark text */
-	font-weight: bold;
-	padding: 10px 15px;
-}
-/* --? */
-
-/* Hover effect for menu items */
-/* .navbar-default .navbar-nav > li > a:hover {
-	color: #6aaf08;
-} */
 
 /* Navbar Brand (Phone Link) */
 #menu .navbar-brand {
 	font-size: 18px;
 	font-weight: 600;
-	color: #333;
+	color: #fff; /* White text by default */
 	display: inline-flex;
 	align-items: center;
-	gap: 5px;
-	background: linear-gradient(45deg, rgba(192, 176, 44, 0.9), rgba(255, 220, 100, 0.8));
-	padding: 10px 15px;
-	border-radius: 20px;
+	gap: 8px; /* Increased gap */
+	background: linear-gradient(45deg, #61B861, #4a9d4a); /* Updated Green gradient */
+	padding: 10px 20px; /* Adjusted padding */
+	border-radius: 25px; /* More rounded */
 	text-decoration: none;
-	box-shadow: 0 4px 10px rgba(255, 165, 0, 0.3);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Adjusted shadow */
+	transition: all 0.3s ease;
 }
 
 #menu .navbar-brand:hover {
 	transform: translateY(-2px);
-	box-shadow: 0 6px 15px rgba(255, 165, 0, 0.4);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+	background: linear-gradient(45deg, #4a9d4a, #61B861); /* Slightly darker on hover */
 }
+
+/* Change brand text color when scrolled */
+#menu.navbar-scrolled .navbar-brand {
+    color: #333; /* Darker text when scrolled */
+    background: linear-gradient(45deg, #E6BE8A, #d4a373); /* Updated Gold gradient when scrolled */
+}
+
+#menu.navbar-scrolled .navbar-brand:hover {
+    background: linear-gradient(45deg, #d4a373, #E6BE8A); /* Brighter gold on hover when scrolled */
+}
+
 
 /* Navbar Links */
 #menu.navbar-default .navbar-nav > li > a {
 	text-transform: uppercase;
-	color: #333;
-	font-size: 16px;
-	font-weight: 500;
-	letter-spacing: 1px;
+	color: #fff; /* White text by default */
+	font-size: 15px; /* Slightly smaller */
+	font-weight: 600; /* Bolder */
+	letter-spacing: 0.5px; /* Reduced letter spacing */
 	padding: 10px 15px;
 	transition: all 0.3s ease;
+    border-radius: 4px; /* Add some rounding to links for hover effect */
 }
 
-/* Hover Effect */
-#menu.navbar-default .navbar-nav > li > a:hover {
-	color: #6aaf08;
-	text-decoration: underline;
+/* Change link color when scrolled */
+#menu.navbar-scrolled.navbar-default .navbar-nav > li > a {
+	color: #333; /* Dark text when scrolled */
 }
+
+/* Hover and Focus Effect for Links */
+#menu.navbar-default .navbar-nav > li > a:hover,
+#menu.navbar-default .navbar-nav > li > a:focus {
+	color: #61B861; /* Updated Green color on hover/focus */
+	background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover for top state */
+}
+
+#menu.navbar-scrolled.navbar-default .navbar-nav > li > a:hover,
+#menu.navbar-scrolled.navbar-default .navbar-nav > li > a:focus {
+	color: #61B861; /* Updated Green color on hover/focus */
+	background-color: rgba(0, 0, 0, 0.05); /* Subtle background on hover for scrolled state */
+}
+
 
 /* Active Link */
-.navbar-default .navbar-nav > .active > a, 
-.navbar-default .navbar-nav > .active > a:hover, 
-.navbar-default .navbar-nav > .active > a:focus {
-	color: #6aaf08;
-	background-color: transparent;
+#menu.navbar-default .navbar-nav > .active > a,
+#menu.navbar-default .navbar-nav > .active > a:hover,
+#menu.navbar-default .navbar-nav > .active > a:focus {
+	color: #fff; /* White text for active link by default */
+	background-color: #61B861; /* Updated Green background for active link */
 }
+
+#menu.navbar-scrolled.navbar-default .navbar-nav > .active > a,
+#menu.navbar-scrolled.navbar-default .navbar-nav > .active > a:hover,
+#menu.navbar-scrolled.navbar-default .navbar-nav > .active > a:focus {
+	color: #fff; /* White text for active link when scrolled */
+	background-color: #61B861; /* Updated Green background for active link */
+}
+
 
 /* Navbar Toggle Button (Hamburger) */
-/* .navbar-toggle {
-	border-radius: 4px;
-	border: 1px solid #6aaf08;
+.navbar-default .navbar-toggle {
+	border-color: #fff; /* White border by default */
+    background-color: transparent;
 }
-
 .navbar-default .navbar-toggle:hover, 
 .navbar-default .navbar-toggle:focus {
-	background-color: #6aaf08;
-	border-color: #6aaf08;
-} */
-
+	background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+	border-color: #fff;
+}
 .navbar-default .navbar-toggle .icon-bar {
-	background-color: #00573d;
+	background-color: #fff; /* White icon bars by default */
 }
 
-/* Responsive Adjustments */
+/* Toggle button when scrolled */
+#menu.navbar-scrolled .navbar-toggle {
+    border-color: #00573d; /* Dark green border when scrolled */
+}
+#menu.navbar-scrolled .navbar-toggle:hover,
+#menu.navbar-scrolled .navbar-toggle:focus {
+    background-color: #00573d; /* Dark green background on hover when scrolled */
+}
+#menu.navbar-scrolled .navbar-toggle .icon-bar {
+    background-color: #00573d; /* Dark green icon bars when scrolled */
+}
+
+/* Responsive Adjustments for Navbar */
 @media (max-width: 768px) {
 	#menu {
 		padding: 10px;
+        background-color: rgba(255, 255, 255, 0.95); /* Always show background on mobile */
 	}
+    #menu .navbar-brand { /* Keep brand colors consistent on mobile */
+        color: #333;
+        background: linear-gradient(45deg, #E6BE8A, #d4a373); /* Updated Gold gradient */
+    }
+    #menu .navbar-brand:hover {
+         background: linear-gradient(45deg, #d4a373, #E6BE8A); /* Updated Gold gradient hover */
+    }
 
-	#menu .navbar-brand {
-		font-size: 16px;
-		padding: 8px 12px;
-	}
-
-	#menu .navbar-nav > li > a {
-		font-size: 14px;
+	#menu .navbar-nav > li > a { /* Nav links dark on mobile */
+		color: #333 !important;
+        font-size: 14px;
 		padding: 10px;
 	}
+    #menu .navbar-nav > li > a:hover,
+    #menu .navbar-nav > li > a:focus {
+        color: #61B861 !important; /* Updated Green */
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    #menu .navbar-nav > .active > a,
+    #menu .navbar-nav > .active > a:hover,
+    #menu .navbar-nav > .active > a:focus {
+        color: #fff !important;
+        background-color: #61B861; /* Updated Green */
+    }
+
+    /* Hamburger menu icon color on mobile (always dark) */
+    .navbar-default .navbar-toggle {
+        border-color: #00573d !important;
+    }
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
+        background-color: #00573d !important;
+    }
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #00573d !important;
+    }
+    /* Override hover for hamburger icon bars on mobile */
+    .navbar-default .navbar-toggle:hover .icon-bar,
+    .navbar-default .navbar-toggle:focus .icon-bar {
+        background-color: #fff !important; /* White bars on hover/focus of button */
+    }
 }
-/* -- */
+
+/* General Section Styling */
 .section-title {
-	margin-bottom: 70px;
+	margin-bottom: 60px; /* Slightly reduced bottom margin */
+}
+.section-title h2 { /* Ensure section titles also use the updated h2 style */
+	margin-bottom: 15px; /* Fine-tune margin for h2 within section-title */
 }
 .section-title p {
-	font-size: 18px;
-	color: #666;
+	font-size: 18px; /* Kept as is, but will inherit new base p line-height */
+	color: #666; /* Kept as is */
+	margin-bottom: 0; /* Remove default p margin if it's directly under section-title */
 }
+
+/* Standardized Section Padding */
+#about, #services, #portfolio, #contact, #service-areas {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+/* Adjust intro header padding slightly due to standardized section padding */
+header .intro-text {
+	padding-top: 150px; /* Adjusted from 180px */
+	padding-bottom: 120px; /* Adjusted from 150px */
+	text-align: center;
+}
+
+
 .btn-custom {
 	text-transform: uppercase;
 	color: #fff;
-	background-color: #6aaf08;
-	padding: 14px 20px;
+	background-color: #61B861; /* Updated Main Green */
+	padding: 14px 22px; /* Slightly increased padding */
 	letter-spacing: 1px;
 	margin: 0;
-	font-size: 17px;
-	font-weight: 400;
+	font-size: 18px; /* Increased font size for CTA */
+	font-weight: 600; /* Made font bolder for CTA */
 	border-radius: 6px;
 	margin-top: 20px;
-	transition: all 0.3s;
+	transition: all 0.3s ease;
+    border: none; /* Ensure no default border interferes */
+}
+.btn-custom i.fa { /* Style for icons within CTA buttons */
+    margin-right: 8px; /* Space between icon and text */
+    font-size: 0.9em; /* Slightly smaller icon relative to button text */
 }
 .btn-custom:hover, .btn-custom:focus, .btn-custom.focus, .btn-custom:active, .btn-custom.active {
 	color: #fff;
-	background-color: #5f9d07;
+	background-color: #4a9d4a; /* Darker shade of updated green */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Add subtle shadow on hover/active */
 }
 .btn:active, .btn.active {
 	background-image: none;
@@ -271,126 +355,195 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', e
 	border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 header .intro-text {
-	padding-top: 290px;
-	padding-bottom: 200px;
+	padding-top: 180px; /* Reduced padding */
+	padding-bottom: 150px; /* Reduced padding */
 	text-align: center;
 }
 /* About Section */
 #about {
-	padding: 120px 0 80px 0;
+	/* padding is now standardized */
 	background: #f6f6f6;
 }
-#about h3 {
-	font-size: 22px;
+#about h2 { /* Targeting the main h2 in this section */
+    margin-bottom: 15px; /* Specific margin for this h2 */
+}
+#about h3 { /* Targeting h3 in residential/commercial columns */
+	font-size: 20px; /* Slightly adjusted */
 	font-weight: 600;
-	margin: 20px 0 0 0;
+	margin-top: 15px; /* Adjusted margin */
+    margin-bottom: 10px; /* Added bottom margin */
 }
-#about .about-text span {
-	color: #70ad47;
-	font-weight: 700;
-	letter-spacing: -1px;
+#about .about-text span { /* "Cherry Valley Landscaping" text */
+	color: #61B861; /* Updated Main Green */
+	font-weight: 700; /* Keep bold */
+	letter-spacing: -0.5px; /* Slightly reduced letter spacing */
 }
+
+.about-intro-text, .about-cta-text, .about-licensed-text {
+  font-size: 17px; /* Standardized font size */
+  line-height: 1.75; /* Improved line height */
+}
+.about-cta-text {
+    margin-bottom: 20px; /* Add some space below the CTA paragraph */
+}
+
+.about-phone-link {
+  font-weight: bold;
+}
+
+.about-services-list {
+  font-size: 16px; /* Align with base paragraph size */
+  list-style-position: inside;
+  margin-bottom: 25px;
+  padding-left: 5px; /* Slight indent */
+}
+.about-services-list li {
+    margin-bottom: 8px; /* Space out list items */
+}
+
+.about-licensed-text {
+  /* font-size is handled by .about-intro-text, .about-cta-text, .about-licensed-text selector */
+  margin-top: 25px;
+}
+
+.about-cta-button {
+  margin-top: 20px; /* Increased margin */
+}
+
+.about-media-image { /* This class was on the img tag directly */
+  height: 230px;
+  object-fit: cover; /* Ensure image covers the area well */
+  border-radius: 4px; /* Add subtle rounding */
+  margin-bottom: 15px; /* Space between image and desc h3 */
+}
+/* Ensure the img-responsive class from bootstrap still works with our custom class */
+.about-media .img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto; /* This will be overridden by .about-media-image height, but good to keep for responsiveness if height is removed */
+}
+
 #about hr {
 	margin-left: 0;
-	margin-bottom: 40px;
+	margin-bottom: 30px; /* Adjusted margin */
 }
-#about .btn {
-	margin-top: 40px;
+/* #about .btn general rule is removed as .about-cta-button is more specific and handles its own margin */
+
+#about .about-media { /* Container for image */
+    text-align: center; /* Center image if it's smaller than column */
 }
-#about .about-media img {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: auto;
+
+#about .about-desc p {
+	font-size: 15px; /* Slightly smaller for these descriptions */
+	line-height: 1.65;
+    margin-bottom: 30px; /* Ensure spacing at the end of these paragraphs */
 }
-#about .about-text, #about .about-desc {
-	margin-bottom: 40px;
+
+#about .about-text, #about .about-desc { /* .about-text is the main left column, .about-desc are for right columns */
+	margin-bottom: 30px; /* Standardized bottom margin */
 }
+
+/* Remove default p top margin if it's the first child in about-text or about-desc */
+#about .about-text > p:first-child,
+#about .about-desc > p:first-child {
+    margin-top: 0;
+}
+/* Specific p styling within #about if not covered by .about-intro-text etc. */
 #about p {
-	line-height: 24px;
-	margin-top: 20px;
+	/* This will apply to any <p> not specifically styled by other .about-* classes */
+	/* It inherits base p styling, so only override if necessary */
 }
 /* Services Section */
 #services {
-	padding: 120px 0;
-	background: #6aaf08;
+	/* padding is now standardized */
+	background: #61B861; /* Updated Main Green */
 }
+#services .section-title h2, #services .section-title .services-subtitle { /* Ensure section title text is white */
+    color: #fff;
+}
+#services .section-title hr { /* Ensure hr is visible on dark background */
+    background: rgba(255,255,255,0.5);
+}
+
 #services .service-media {
-	margin: 10px;
+	margin-bottom: 20px; /* Increased space below image */
 }
 #services .service-media img {
-	position: relative;
-	/* width: 225px; -- Rely on img-responsive and parent column for width on mobile */
-	/* height: 225px; -- Rely on img-responsive (height: auto) for aspect ratio on mobile */
-    /* img-responsive class in HTML should provide max-width: 100% and height: auto */
 	border-radius: 50%;
-	border: 10px solid rgba(255,255,255,0.1);
-    display: inline-block; /* Allows text-align:center on parent to work if image is smaller than column */
-    max-width: 100%; /* Reinforce responsiveness */
-    height: auto; /* Reinforce aspect ratio */
+	border: 8px solid rgba(255,255,255,0.15); /* Slightly thinner border, more opaque */
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    width: 200px; /* Fixed width for consistency */
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensure image covers the circle */
 }
 
-/* Maintain fixed size for larger screens if desired, but still allow shrinking if column is too small */
-@media (min-width: 768px) {
-    #services .service-media img {
-        width: 225px;
-        height: 225px;
-    }
-}
+/* No media query needed for img size if fixed, but ensure text-center on parent col-md-3 handles alignment */
 
 #services .service-desc {
-	margin: 10px 10px 40px;
-	text-align: center;
+	margin-bottom: 40px; /* Keep bottom margin for spacing between service items */
+	padding: 0 10px; /* Add some horizontal padding for text block */
 }
-#services h2 {
+#services .service-desc h3 {
+    color: #fff;
+    font-size: 20px; /* Adjusted size */
+    margin-bottom: 10px; /* Space below h3 */
+}
+#services .service-desc p {
+	color: rgba(255,255,255,0.85); /* Slightly more transparent for better readability */
+    font-size: 15px; /* Slightly smaller for service descriptions */
+    line-height: 1.65;
+}
+
+/* Original #services h2, .services-subtitle, #services p, #services hr are now handled by .section-title or .service-desc specific selectors */
+/* Keeping this for direct children if any, but most are nested now */
+#services > .container > h2 { /* Example if there was a direct h2 */
 	color: #fff;
 }
-#services h3 {
-	color: #fff;
-	font-size: 24px;
-	font-weight: 400;
-	padding: 5px 0;
-}
-#services p {
+#services > .container > p {
 	color: rgba(255,255,255,0.9);
 }
-#services hr {
+#services > .container > hr { /* Example if there was a direct hr */
 	background: rgba(255,255,255,0.6);
 }
 /* Portfolio Section */
 #portfolio {
-	padding: 100px 0;
+	/* padding is now standardized */
 	background: #f6f6f6;
 }
 .categories {
 	text-align: center;
+    margin-bottom: 30px; /* Reduced margin below filter buttons */
 }
-ul.cat li {
+ul.cat li { /* This selector seems unused as ol.type is primary */
 	display: inline-block;
 }
 ol.type li {
 	display: inline-block;
-	margin: 0 10px 40px 10px;
+	margin: 0 8px 15px 8px; /* Adjusted margins for filter buttons */
 }
 ol.type li a {
 	color: #555;
-	font-size: 16px;
-	font-weight: 400;
-	padding: 8px 16px;
-	background: #e6e6e6;
-	border: 0;
-	border-radius: 4px;
-	letter-spacing: 1px;
+	font-size: 15px; /* Slightly smaller font */
+	font-weight: 500; /* Slightly bolder */
+	padding: 10px 18px; /* Adjusted padding */
+	background: #eaeaea; /* Slightly lighter background */
+	border: 1px solid #ddd; /* Added subtle border */
+	border-radius: 20px; /* More rounded buttons */
+	letter-spacing: 0.5px; /* Reduced letter spacing */
 	text-transform: uppercase;
-	transition: all 0.3s;
+	transition: all 0.3s ease;
 }
 ol.type li a.active {
-	background: #6aaf08;
+	background: #61B861; /* Updated Main Green */
 	color: #fff;
+    border-color: #4a9d4a; /* Darker shade of updated green */
 }
 ol.type li a:hover {
-	background: #6aaf08;
+	background: #61B861; /* Updated Main Green */
 	color: #fff;
+    border-color: #4a9d4a; /* Darker shade of updated green */
 }
 .isotope-item {
 	z-index: 2
@@ -424,39 +577,58 @@ ol.type li a:hover {
 	transition-property: transform, opacity;
 }
 .portfolio-item {
-	margin: 15px 0;
+	margin: 15px 0; /* Keep vertical margin */
+    padding: 0 10px; /* Add horizontal padding for spacing between items if Bootstrap's default is not enough */
 }
 .portfolio-item .hover-bg {
 	overflow: hidden;
 	position: relative;
-	margin: 0 auto;
+	border-radius: 6px; /* Add rounded corners to portfolio items */
+	box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Add subtle shadow for depth */
+    transition: all 0.3s ease;
 }
+.portfolio-item .hover-bg:hover {
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15); /* Enhance shadow on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+}
+.hover-bg img { /* Ensure images within are responsive and fill the container */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
 .hover-bg .hover-text {
 	position: absolute;
 	text-align: center;
-	margin: 0 auto;
+	margin: 0 auto; /* Should be fine */
 	color: #fff;
-	background: rgba(0, 0, 0, 0.6);
-	padding: 30% 0 0 0;
+	background: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
+	padding: 20px; /* Use padding for content spacing */
+    top: 0; left: 0; /* Cover entire area */
 	height: 100%;
 	width: 100%;
 	opacity: 0;
-	transition: all 0.5s;
+	transition: all 0.4s ease-in-out; /* Smoother transition */
+    display: flex; /* For centering content */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .hover-bg .hover-text>h4 {
 	opacity: 0;
 	color: #fff;
-	-webkit-transform: translateY(100%);
-	transform: translateY(100%);
-	transition: all 0.3s;
-	font-size: 18px;
-	letter-spacing: 1px;
-	font-weight: 300;
+	-webkit-transform: translateY(20px); /* Start slightly lower */
+	transform: translateY(20px);
+	transition: opacity 0.3s ease-in-out 0.1s, transform 0.3s ease-in-out 0.1s; /* Staggered transition */
+	font-size: 17px; /* Adjusted size */
+	letter-spacing: 0.5px;
+	font-weight: 500; /* Bolder */
 	text-transform: uppercase;
+    margin: 0; /* Remove default margin if any */
 }
 .hover-bg:hover .hover-text>h4 {
 	opacity: 1;
-	-webkit-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden; /* Keep for performance */
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
 }
@@ -510,151 +682,161 @@ ol.type li a:hover {
 #service-areas {
 	background: #444 url(../img/service-map.png) center center no-repeat fixed;
 	background-size: cover;
+    /* padding is standardized */
 }
 
 #service-areas .overlay {
-	padding: 120px 0;
-	background: rgba(106, 175, 8, 0.85);
+	padding: 100px 0; /* Use standardized padding from #service-areas directly */
+	background: rgba(97, 184, 97, 0.9); /* Overlay with Updated Main Green, slightly more opaque */
 }
 
-#service-areas h2 {
-	color: #fff;
+#service-areas .section-title h2, #service-areas .section-title .service-areas-subtitle {
+    color: #fff; /* Ensure titles are white */
+}
+#service-areas .section-title hr {
+    background: rgba(255,255,255,0.5); /* Lighter hr */
 }
 
-#service-areas hr {
-	background: rgba(255, 255, 255, 0.6);
+.service-areas-subtitle { /* This class is inside .section-title */
+  /* color: #fff; Handled by rule above */
+  font-size: 22px; /* Adjusted size */
+  font-weight: 400;
+  padding: 5px 0;
+  line-height: 1.5;
 }
 
-#service-areas p {
-	color: #222;
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 32px;
+.service-areas-highlight {
+  font-weight: bold; /* Keep this for emphasis */
 }
 
-/* Style the location list */
+/* Removing the general #service-areas p rule as .location-list-item-text is more specific */
+
+.location-list-item-text {
+  font-weight: 500; /* Slightly less bold for better readability in a list */
+  color: #fff;
+  font-size: 18px; /* Adjusted font size for better fit */
+  line-height: 1.6;
+  padding: 6px 12px; /* Padding for each item */
+  margin: 4px 0; /* Margin between items */
+  border-radius: 4px;
+  background-color: rgba(0,0,0,0.1); /* Subtle background for each item */
+  display: inline-block; /* To make background fit content */
+}
+
+/* Style the location list container */
 .location-list {
 	list-style-type: none;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center; /* Center items if they don't fill the row */
 	padding: 0;
-	gap: 15px; /* Adds spacing between items */
+	gap: 10px 15px; /* Row gap and column gap */
+    margin-top: 20px; /* Space above the list */
 }
 
-/* Ensure items have a flexible width */
-.location-list {
-	list-style-type: none;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	padding: 0;
-	gap: 15px; /* Adds spacing between items */
-}
-
-/* Default: Two items per row (for desktop) */
+/* Styling for each column (li.item) within the flex container */
 .location-list .item {
-	flex: 1 1 calc(50% - 20px); /* 2 items per row */
+	flex: 1 1 calc(33.333% - 20px); /* Aim for 3 columns on wider screens, adjust as needed */
 	box-sizing: border-box;
-	text-align: center;
+	text-align: left; /* Align text to the left within each column block */
+    display: flex; /* Use flex to stack p elements nicely */
+    flex-direction: column;
 }
 
-/* Make text more readable */
-.location-list .item p {
-	color: #fff !important;
-	margin: 5px 0;
-	padding: 10px;
-	font-size: 25px;
-	font-weight: bold;
+/* Mobile: Adjust to 2 columns then 1 column */
+@media (max-width: 992px) { /* Medium devices (tablets, less than 992px) */
+    .location-list .item {
+        flex: 1 1 calc(50% - 15px); /* 2 items per row */
+    }
 }
 
-/* Mobile: One item per row */
-@media (max-width: 768px) {
+@media (max-width: 767px) { /* Small devices (landscape phones, less than 768px) */
 	.location-list {
-		flex-direction: column; /* Stack items vertically */
-		align-items: center;
+		flex-direction: column;
+		align-items: stretch; /* Stretch items to fill width */
+        gap: 0; /* Remove gap for stacked items */
 	}
-
 	.location-list .item {
-		width: 90%; /* Full width */
+		width: 100%; /* Full width for each item's container */
+        margin-bottom: 10px; /* Space between stacked items */
+        text-align: center; /* Center text on mobile for single column */
 	}
+    .location-list-item-text {
+        display: block; /* Make each location take full width of its container */
+    }
 }
-/* -- */
+
 /* Contact Section */
 #contact {
-	margin: 100px 0;
+	/* padding is standardized */
 	background: #F6F6F6;
 }
-#contact .section-title p {
+#contact .section-title p { /* Assuming this p is for a subtitle under "Contact Us" */
 	color: #777;
+    margin-bottom: 40px; /* Add space before the contact info blocks */
 }
-#contact form {
-	padding: 0;
-	margin-top: 40px;
+
+/* Contact Info Blocks (Service Area, Working Hours, Contact Info) */
+#contact .contact-info { /* This is the row containing the three col-md-4 blocks */
+	margin-bottom: 50px; /* Increased space after info blocks, before form */
 }
-#contact h3 {
+#contact .contact-info h3 {
 	text-transform: uppercase;
-	font-size: 17px;
+	font-size: 18px; /* Slightly larger */
 	font-weight: 600;
-}
-#contact .text-danger {
-	color: #cc0033;
-	text-align: left;
-}
-label {
-	font-size: 12px;
-	font-weight: 400;
-	font-family: 'Open Sans', sans-serif;
-	float: left;
-}
-#contact .form-control {
-	display: block;
-	width: 100%;
-	padding: 20px 20px;
-	font-size: 16px;
-	line-height: 1.42857143;
-	color: #444;
-	background-color: #fff;
-	background-image: none;
-	border: 1px solid #ddd;
-	border-radius: 0;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	-webkit-transition: none;
-	-o-transition: none;
-	transition: none;
-}
-#contact .form-control:focus {
-	outline: 0;
-	-webkit-box-shadow: 0 0 15px #ddd;
-	box-shadow: 0 0 15px #ddd;
-}
-.form-control::-webkit-input-placeholder {
-color: #777;
-}
-.form-control:-moz-placeholder {
-color: #777;
-}
-.form-control::-moz-placeholder {
-color: #777;
-}
-.form-control:-ms-input-placeholder {
-color: #777;
-}
-#contact .contact-info {
-	margin-bottom: 30px;
+    color: #333;
+    margin-bottom: 15px; /* Space below h3 */
 }
 #contact .contact-info hr {
-	background: #ddd;
+	background: #ccc; /* Lighter hr */
+    width: 50px; /* Shorter hr */
+    margin-bottom: 20px; /* Space after hr */
 }
-#contact .contact-item {
-	margin: 20px 0 40px 0;
+#contact .contact-item p {
+    font-size: 15px; /* Slightly smaller for contact details */
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 8px; /* Space between lines in contact item */
 }
+#contact .contact-item p:last-child {
+    margin-bottom: 0; /* No margin for the last p in a contact item */
+}
+.contact-area-county {
+  font-weight: bold;
+}
+.contact-area-main {
+  text-decoration: underline;
+}
+.contact-phone-link {
+  font-weight: bold;
+}
+
+/* Contact Form Area ("Leave us a message") */
+#contact .col-md-8.col-md-offset-2 h3 { /* Targeting "Leave us a message" */
+    text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 600;
+    color: #333;
+    margin-bottom: 25px; /* Space before the iframe */
+    text-align: center; /* Center this heading */
+}
+
+.contact-form-iframe {
+  min-height: 500px;
+  border: 1px solid #ddd; /* Add a light border to the iframe */
+  border-radius: 4px; /* Rounded corners for the iframe */
+}
+
+/* Removing old form specific styles as the form is an iframe */
+/* #contact form, #contact .text-danger, label, #contact .form-control etc. are not needed */
+
 /* Footer Section*/
 #footer {
-	background: #333;
-	padding: 30px 0 20px;
+	background: #2c2c2c; /* Slightly darker footer background */
+	padding: 40px 0 30px; /* Adjusted padding */
 }
+/* #footer h3 is not currently used, can be removed or kept for future */
+/*
 #footer h3 {
 	color: #1e7a46;
 	font-weight: 400;
@@ -662,36 +844,92 @@ color: #777;
 	text-transform: uppercase;
 	margin-bottom: 20px;
 }
+*/
+
+/* Social icons are commented out in HTML, so related CSS can be commented or removed if not planned for use */
+/*
 #footer .social {
-	margin: 10px 0 50px 0;
+	margin: 10px 0 30px 0; /* Reduced margin if social icons are re-added */
 }
 #footer .social ul li {
 	display: inline-block;
-	margin: 0 20px;
+	margin: 0 15px; /* Reduced margin for icons */
 }
 #footer .social i.fa {
-	font-size: 22px;
-	width: 40px;
-	height: 40px;
-	padding: 10px;
+	font-size: 20px; /* Slightly smaller icons */
+	width: 36px;
+	height: 36px;
+	padding: 8px;
 	background: #444;
-	color: #6aaf08;
+	color: #61B861;
 	border-radius: 50%;
-	transition: all 0.3s;
+	transition: all 0.3s ease;
 }
 #footer .social i.fa:hover {
-	background: #6aaf08;
+	background: #61B861;
 	color: #fff;
 }
-#footer p {
-	color: #666;
-	font-size: 15px;
+*/
+
+#footer p { /* Copyright and Designed by text */
+	color: #999; /* Lighter text for better readability on dark background */
+	font-size: 14px; /* Slightly smaller */
+	line-height: 1.6;
+    margin-bottom: 0; /* Remove bottom margin if it's the only element */
 }
-#footer a {
-	color: #888;
+#footer a { /* For the "TemplateWire" link */
+	color: #aaa; /* Lighter link color */
+    text-decoration: none; /* Remove underline by default */
+    transition: color 0.3s ease;
 }
 #footer a:hover {
-	color: #ccc;
+	color: #fff; /* White on hover for more prominence */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Header Logo Styles */
+.header-licensed-text {
+  color: #ffff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: large;
+}
+
+.header-tagline-text {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 600;
+  font-size: x-large;
+}
+
+#header .logo-container {
+  text-align: center;
+  margin-bottom: 20px; /* Adjust spacing as needed */
+}
+
+#header .logo {
+  width: 120px; /* Adjust size as needed */
+  height: 120px; /* Ensure width and height are equal for a perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  border: 3px solid #E6BE8A; /* Updated Gold/Tan color for logo border */
+  object-fit: cover; /* Ensures the image scales properly */
+}
+
+.contact-area-county {
+  font-weight: bold;
+}
+
+.contact-area-main {
+  text-decoration: underline;
+}
+
+.contact-phone-link {
+  font-weight: bold;
+}
+
+.contact-form-iframe {
+  min-height: 500px;
+  border: 0;
 }
 
 /* IFRAME */
@@ -717,12 +955,92 @@ color: #777;
 }
 
 /* Mobile-specific padding adjustments for specific sections */
-@media (max-width: 767px) {
+@media (max-width: 767px) { /* Small devices (phones, less than 768px) */
+  /* Reduce overall section padding on mobile for a tighter look */
+  #about, #services, #portfolio, #contact, #service-areas, #footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  header .intro-text { /* Adjust header padding as well for mobile */
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  /* Adjust container padding if necessary, though Bootstrap usually handles this well.
+     The previous specific container paddings might still be useful if direct children of sections need it.
+     Let's re-evaluate if they are needed or if the section padding reduction is enough.
+     For now, I'll keep them commented out to see the effect of section padding reduction first.
+  */
+  /*
   #about .container,
   #services .container,
   #portfolio .container,
   #contact .container {
     padding-left: 10px;
     padding-right: 10px;
+  }
+  */
+
+  /* Reduce font size for headings on mobile for better fit */
+  h1 {
+    font-size: 30px; /* Example: Adjust as needed */
+  }
+  h2 {
+    font-size: 28px; /* Example: Adjust as needed */
+  }
+  .intro h1 { /* Specifically target header h1 if it needs different sizing */
+    font-size: 36px; /* Larger than other h1s but smaller than desktop */
+  }
+  .header-tagline-text { /* Header tagline text adjustment */
+    font-size: 18px; /* Was x-large (24px equivalent) */
+    line-height: 1.5;
+  }
+
+  /* About section on mobile */
+  #about .about-media-image {
+    height: auto; /* Let height adjust by width */
+    max-width: 80%; /* Don't let image take full width if it's very wide */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #about .about-desc {
+    text-align: center; /* Center the description text below image on mobile */
+  }
+  #about .about-desc h3 {
+    font-size: 18px; /* Adjust h3 size for mobile */
+  }
+  #about .about-desc p {
+    font-size: 14px; /* Adjust paragraph size for mobile */
+  }
+
+  /* Services section on mobile */
+  #services .service-media img {
+    width: 150px; /* Reduced size for mobile */
+    height: 150px; /* Reduced size for mobile */
+  }
+  #services .service-desc h3 {
+    font-size: 18px; /* Adjust h3 size */
+  }
+  #services .service-desc p {
+    font-size: 14px; /* Adjust p size */
+  }
+
+  /* Contact section on mobile */
+  #contact .contact-info .col-md-4 { /* Target each info block */
+    text-align: center;
+    margin-bottom: 30px; /* Add space between stacked blocks */
+  }
+  #contact .contact-info .col-md-4:last-child {
+    margin-bottom: 0; /* No margin for the last block */
+  }
+  #contact .contact-info hr {
+    margin-left: auto; /* Center hr */
+    margin-right: auto; /* Center hr */
+  }
+  #contact .col-md-8.col-md-offset-2 h3 { /* "Leave us a message" heading */
+    font-size: 18px;
+  }
+  .contact-form-iframe {
+    min-height: 400px; /* Reduce iframe height on mobile */
   }
 }
