@@ -208,12 +208,17 @@ hr {
 		padding: 10px;
         background-color: rgba(255, 255, 255, 0.95); /* Always show background on mobile */
 	}
-    #menu .navbar-brand { /* Keep brand colors consistent on mobile */
+    #menu .navbar-brand {
         color: #333;
         background: linear-gradient(45deg, #E6BE8A, #d4a373); /* Updated Gold gradient */
+        font-size: 14px; /* Reduced font size for mobile */
+        padding: 8px 12px; /* Reduced padding for mobile */
     }
     #menu .navbar-brand:hover {
          background: linear-gradient(45deg, #d4a373, #E6BE8A); /* Updated Gold gradient hover */
+    }
+    #menu .navbar-brand i.fa { /* Adjust icon size in navbar brand for mobile */
+        font-size: 0.9em;
     }
 
 	#menu .navbar-nav > li > a { /* Nav links dark on mobile */
@@ -295,6 +300,18 @@ header .intro-text {
     margin-right: 8px; /* Space between icon and text */
     font-size: 0.9em; /* Slightly smaller icon relative to button text */
 }
+
+/* Specific styling for the intro header CTA button on larger screens */
+@media (min-width: 768px) { /* Apply only on md screens and up */
+  #header .intro-text .btn-custom.btn-lg {
+    padding: 10px 20px; /* Reduced padding */
+    font-size: 17px; /* Reduced font size */
+  }
+  #header .intro-text .btn-custom.btn-lg i.fa {
+    font-size: 0.85em; /* Adjust icon size accordingly */
+  }
+}
+
 .btn-custom:hover, .btn-custom:focus, .btn-custom.focus, .btn-custom:active, .btn-custom.active {
 	color: #fff;
 	background-color: #4a9d4a; /* Darker shade of updated green */
@@ -1042,5 +1059,14 @@ ol.type li a:hover {
   }
   .contact-form-iframe {
     min-height: 400px; /* Reduce iframe height on mobile */
+  }
+
+  /* Reduce size of large CTA buttons on mobile */
+  .btn-custom.btn-lg {
+    padding: 10px 16px; /* Reduced padding for mobile */
+    font-size: 15px; /* Reduced font size for mobile */
+  }
+  .btn-custom.btn-lg i.fa {
+    font-size: 0.9em; /* Ensure icon scales with new font size */
   }
 }
