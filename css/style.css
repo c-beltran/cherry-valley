@@ -839,7 +839,8 @@ ol.type li a:hover {
 }
 
 .contact-form-iframe {
-  min-height: 500px;
+  height: 800px; /* Set fixed height to display full form content */
+  width: 100%; /* Ensure it takes full available width */
   border: 1px solid #ddd; /* Add a light border to the iframe */
   border-radius: 4px; /* Rounded corners for the iframe */
 }
@@ -950,25 +951,19 @@ ol.type li a:hover {
 }
 
 /* IFRAME */
-/* Make iframe container responsive */
+/* Container for the Google Form iframe */
 .iframe-container {
-  position: relative;
   width: 100%;
-  padding-bottom: 100%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
   max-width: 100%;
-  /* background: #fff;  */
   margin: 0 auto;
+  /* Removed position: relative, padding-bottom, height: 0, overflow: hidden */
+  /* This container will now simply wrap the iframe, whose height will be set directly */
 }
 
-.iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+.iframe-container iframe { /* This rule might be redundant if .contact-form-iframe is specific enough */
   width: 100%;
-  height: 100%;
-  border: none;
+  /* Removed position: absolute, top, left, height: 100% as height will be fixed on .contact-form-iframe */
+  border: none; /* Keep this if you want no border from this rule */
 }
 
 /* Mobile-specific padding adjustments for specific sections */
@@ -1057,9 +1052,9 @@ ol.type li a:hover {
   #contact .col-md-8.col-md-offset-2 h3 { /* "Leave us a message" heading */
     font-size: 18px;
   }
-  .contact-form-iframe {
-    min-height: 400px; /* Reduce iframe height on mobile */
-  }
+  /* .contact-form-iframe height is now globally set to 800px,
+     so mobile-specific min-height is removed to allow full display.
+     Width will remain responsive. */
 
   /* Reduce size of large CTA buttons on mobile */
   .btn-custom.btn-lg {
