@@ -18,13 +18,13 @@ function main() {
       });
 
 	
-    // Show Menu on Book
+    // Show Menu on Scroll (Replaces 'on' class logic with 'navbar-scrolled' on #menu)
     $(window).bind('scroll', function() {
-        var navHeight = $(window).height() - 500;
-        if ($(window).scrollTop() > navHeight) {
-            $('.navbar-default').addClass('on');
+        var scrollPosition = $(window).scrollTop();
+        if (scrollPosition > 50) { // Adjust this value as needed
+            $('#menu').addClass('navbar-scrolled');
         } else {
-            $('.navbar-default').removeClass('on');
+            $('#menu').removeClass('navbar-scrolled');
         }
     });
 
